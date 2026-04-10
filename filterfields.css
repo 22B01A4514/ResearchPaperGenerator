@@ -1,0 +1,99 @@
+/* ── New: Dataset Filters Row (domain + desired features side-by-side) ──────── */
+
+.dataset-filters-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 8px;
+  background: #f0f4ff;
+  border: 1.5px solid #d0d9f5;
+  border-radius: 10px;
+  padding: 20px 20px 14px;
+}
+
+.filter-group label {
+  font-weight: 700;
+  color: #1a1a2e;
+  font-size: 0.95rem;
+}
+
+.field-hint {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #9b8fe0;
+  margin-left: 4px;
+}
+
+.domain-input-wrap {
+  position: relative;
+}
+
+.domain-input-wrap input {
+  width: 100%;
+}
+
+/* ── Domain suggestion dropdown ─────────────────────────────────────────────── */
+.domain-suggestions {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1.5px solid #d0d9f5;
+  border-radius: 8px;
+  list-style: none;
+  padding: 4px 0;
+  margin: 0;
+  z-index: 100;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.15);
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.domain-suggestions li {
+  padding: 9px 14px;
+  font-size: 0.87rem;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.domain-suggestions li:hover {
+  background: #eeeaff;
+  color: #667eea;
+}
+
+/* ── Pipeline refresh bar ────────────────────────────────────────────────────── */
+.pipeline-refresh-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  background: #fff8f0;
+  border-bottom: 1px solid #f0e8d8;
+  font-size: 0.82rem;
+}
+
+.refresh-hint {
+  color: #888;
+  font-style: italic;
+}
+
+.btn-refresh-datasets {
+  padding: 6px 14px;
+  background: #c9602a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-refresh-datasets:hover { background: #a84d20; }
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .dataset-filters-row {
+    grid-template-columns: 1fr;
+  }
+}

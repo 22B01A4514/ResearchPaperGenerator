@@ -1,0 +1,276 @@
+/* ═══════════════════════════════════════════════════════════════════
+   AlgoDiagram.css
+   Styles for AlgorithmBlock and BlockDiagramView components.
+   Import in App.jsx:  import './AlgoDiagram.css';
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Shared empty state ────────────────────────────────────────────── */
+.ad-empty {
+  color: #aaa;
+  font-style: italic;
+  padding: 24px 0;
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   ALGORITHM BLOCK
+   ══════════════════════════════════════════════════════════════════════ */
+
+.ad-algo-section {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #333;
+}
+
+/* Prose text that appears before the first algorithm */
+.ad-algo-prefix p {
+  margin: 0 0 10px;
+  line-height: 1.75;
+  text-align: justify;
+}
+
+/* ── Card wrapper ──────────────────────────────────────────────────── */
+.ad-algo-block {
+  margin: 20px 0;
+  border: 2px solid #2E4057;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 14px rgba(46, 64, 87, 0.12);
+}
+
+/* ── Dark header bar ───────────────────────────────────────────────── */
+.ad-algo-header {
+  background: #2E4057;
+  color: #fff;
+  padding: 11px 18px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+}
+
+/* ── Code body ─────────────────────────────────────────────────────── */
+.ad-algo-body {
+  background: #f9fbfe;
+}
+
+/* Empty line spacer */
+.ad-spacer {
+  height: 6px;
+}
+
+/* ── Individual code row ───────────────────────────────────────────── */
+.ad-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 4px 14px;
+  border-bottom: 1px solid #eef0f5;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.87rem;
+  line-height: 1.6;
+}
+.ad-row:last-child {
+  border-bottom: none;
+}
+
+/* Line number gutter */
+.ad-ln {
+  min-width: 22px;
+  text-align: right;
+  flex-shrink: 0;
+  color: #c0c8d8;
+  font-size: 0.74rem;
+  padding-top: 2px;
+  user-select: none;
+}
+
+/* Code text */
+.ad-code {
+  flex: 1;
+  word-break: break-word;
+  color: #222;
+}
+
+/* ── Row type colouring ────────────────────────────────────────────── */
+
+/* Input / Output lines — blue tint */
+.ad-io {
+  background: #eef4fb;
+}
+.ad-io .ad-code {
+  color: #1a5276;
+  font-style: italic;
+}
+
+/* Control-flow keywords (for / while / if / return …) — warm tint */
+.ad-kw {
+  background: #fdf3ec;
+}
+.ad-kw .ad-code {
+  color: #c0392b;
+  font-weight: 600;
+}
+
+/* Comments */
+.ad-comment {
+  background: #f5f5f5;
+}
+.ad-comment .ad-code {
+  color: #999;
+  font-style: italic;
+}
+
+/* Numbered steps — slight left indent */
+.ad-step .ad-code {
+  color: #1a1a1a;
+}
+
+/* Plain lines */
+.ad-line .ad-code {
+  color: #333;
+}
+
+/* ── END ALGORITHM footer bar ──────────────────────────────────────── */
+.ad-end {
+  background: #dde5ef;
+  color: #2E4057;
+  padding: 8px 18px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 0.87rem;
+  border-top: 1px solid #c0ccd8;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   BLOCK DIAGRAM
+   ══════════════════════════════════════════════════════════════════════ */
+
+.ad-bd-section {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #333;
+}
+
+/* Prose paragraphs around the diagram */
+.ad-bd-text p {
+  margin: 0 0 10px;
+  line-height: 1.75;
+  text-align: justify;
+}
+
+/* ── Card wrapper (shared by FlowTable + ArchFallback) ─────────────── */
+.ad-diagram-wrap {
+  margin: 20px 0;
+  border: 2px solid #2E4057;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(46, 64, 87, 0.13);
+}
+
+/* ── Dark title bar ────────────────────────────────────────────────── */
+.ad-diagram-title {
+  background: #2E4057;
+  color: #fff;
+  padding: 12px 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+}
+
+/* ── Flow rows container ───────────────────────────────────────────── */
+.ad-flow {
+  background: #fff;
+}
+
+/* ── Single flow row ───────────────────────────────────────────────── */
+.ad-flow-row {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid #eef0f5;
+  transition: background 0.15s;
+}
+.ad-flow-row:last-child {
+  border-bottom: none;
+}
+.ad-flow-row:hover {
+  background: #f4f7fc;
+}
+
+/* Source cell */
+.ad-flow-src {
+  min-width: 155px;
+  max-width: 195px;
+  flex-shrink: 0;
+  padding: 12px 14px;
+  background: #eaf0f8;
+  border-right: 1px solid #d0dae8;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 0.88rem;
+  color: #2E4057;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Arrow cell */
+.ad-flow-arrow {
+  flex-shrink: 0;
+  padding: 12px 10px;
+  border-right: 1px solid #eef0f5;
+  font-size: 1.25rem;
+  color: #048a81;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+/* Destination cell */
+.ad-flow-dst {
+  flex: 1;
+  padding: 12px 14px;
+  font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+}
+
+.ad-flow-dst-name {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #1a3350;
+}
+
+/* Sub-modules (smaller italic text) */
+.ad-flow-sub {
+  font-size: 0.76rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* Flow description */
+.ad-flow-desc {
+  font-size: 0.82rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* ── Plain-text architecture fallback ──────────────────────────────── */
+.ad-arch-body {
+  padding: 16px 20px;
+  background: #fafbfe;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 0.95rem;
+  line-height: 1.78;
+  color: #333;
+}
+
+.ad-arch-h {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  color: #2E4057;
+  font-weight: bold;
+  margin: 14px 0 4px;
+}
