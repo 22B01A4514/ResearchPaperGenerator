@@ -410,9 +410,3 @@ ResearchPaperGenerator/
 - **Graph generation**: Requires a loadable dataset. Some UCI/Kaggle datasets may be unavailable due to access restrictions or format changes.
 - **Citeproc**: Full CSL bibliography formatting requires `citeproc-py`. Falls back to a clean IEEE format string if unavailable.
 - **LLM accuracy**: Section content is grounded in retrieved papers, but the model can still hallucinate details. Use the Hallucination Highlighter panel and Evidence Alignment scores to review claims.
-
----
-
-## License
-
-This project is released for academic and educational use. See [LICENSE](LICENSE) for details.
